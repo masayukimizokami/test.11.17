@@ -1,4 +1,12 @@
 class RoomsController < ApplicationController
+  def reserve
+    @reserves = Reserve.new
+  end
+  
+  def myroom
+    @rooms = Room.all
+  end
+ 
   def index
     @rooms = Room.all
   end

@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def profile
+    @users = User.all
+  end
+  
   def index
     @users = User.all
   end

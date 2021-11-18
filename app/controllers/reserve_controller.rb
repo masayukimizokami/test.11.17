@@ -1,6 +1,11 @@
 class ReserveController < ApplicationController
 
 	before_action :permit_params, except: :new
+    
+	def index
+		@reserves = Reserve.new
+	end
+
 
 	def new
 		@reserve = Reserve.new
