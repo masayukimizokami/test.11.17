@@ -2,14 +2,12 @@
     <h3>こちら側にルームの詳細ページが入ります</h3>
     <div>
         </table>
-            <div>
-                <th>部屋写真</th>
-                <td><%= @room.room_name %></td>
-            </div>
             
-            <div>
-                <th>ユーザー写真</th>
-                <td><%= @room.room_name %></td>
+            <div>        
+                <th>部屋写真</th>
+                <td>
+                  <%= image_tag @room.room_image %>
+                 </td>
             </div>
 
             <div>

@@ -21,7 +21,10 @@ class RoomsController < ApplicationController
   end
 
   def create
-    @room = Room.new(params.require(:room).permit(:room_name, :room_PR, :room_price, :room_address,))
+    @room = Room.new(params.require(:room).permit(:room_name, :room_PR, :room_price, :room_address,:room_image))
+    if image = params[:comment][:image]
+      @comment.image.attach(image)
+    end
     @room.user_id = current_user.id
     @room.save
     redirect_to room_path(@room)

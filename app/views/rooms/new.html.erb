@@ -2,6 +2,9 @@
 
 
 <%= form_for @room do |f| %>
+<%= f.label :ルームイメージ %>
+<%= f.file_field :room_image %>
+
 <%= f.label :ルーム名 %>
 <%= f.text_field :room_name %>
 
