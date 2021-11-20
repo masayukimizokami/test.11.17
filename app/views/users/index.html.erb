@@ -11,11 +11,18 @@
  
       <tbody>
         <% @rooms.each do |room| %>
-          <tr>
-            
+          　<tr>
             <td><%= room.room_name %></td>
+
+            <td><%= link_to room_path(room) do %>
+              　　<%= room.room_name %> 
+              <% end %></td>
+
+            
             <td><%= room.room_PR %></td>
-            <td><%= room.room_price %></td>
+            <td>¥<%= room.room_price %></td>
+            <td><%= room.updated_at.strftime('%Y年%m月%d日') %></td>
+
             </td>
             
           </tr>
