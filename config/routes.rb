@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
+  resources :profiles
   get "/users/profile",to: "users#profile"
+  post "/users/profile_uodate",to: "users#profile_uodate"
   get "/rooms/myroom",to: "rooms#myroom"
   get "/rooms/reserve",to: "rooms#reserve"
   

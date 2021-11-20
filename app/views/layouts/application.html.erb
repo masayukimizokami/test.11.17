@@ -45,16 +45,14 @@
          <div class="header-right">
            
               <%= link_to "ルームを登録する", "/rooms/new" %>
-              <%= link_to "登録済みルーム", "/rooms/myroom" %>
+              <%= link_to "登録済みルーム", users_path(current_user)  %>
               <%= link_to "予約済みルーム", "/rooms/reserve" %>
-              <%= link_to "設定", "/users/1" %>
+              <%= link_to "設定", "/users/#{current_user.id}" %>
               
          </div>
       </header>
     <%= yield %>
   </body>
-      <footer>
-        <p>© 2020 POTEPAN.INC.</p>
-      </footer>
+      
 
 </html>

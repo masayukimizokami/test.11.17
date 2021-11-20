@@ -1,15 +1,32 @@
-<h1>USERの紹介</h1>
+<div>
+    <%= link_to "アカウント", "/users/#{current_user.id}" %>
+    <div>
+        <%= link_to "プロフィール", "/profiles/#{current_user.id}/edit" %>
+    </div>
+</div>
 
-<%= @user .name %>
-
-<%= @user .email %>
+ <h1>アカウント設定のページ</h1>
 
 
 
-<%= link_to "user編集", edit_user_path(@user), class: "button: is-primary" %>
-
- <%= link_to "プロフィールのページへリング", "/users/profile" %>
-
+ <table>
+      <tr>
+        <th>メールアドレス</th>
+        <td><%= @user.email %></td>
+      </tr>
+      <tr>
+        <th>パスワード</th>
+        <td><%= @user.encrypted_password %></td>
+      </tr>
+      
+    </table>
+ 
+    <div>
+      
+     
+        <%= link_to "編集", [:edit, @user], class: "button is-warning is-light" %>   
+      
+    </div>
 
 
    

@@ -1,9 +1,56 @@
-<h1>Rooms#show</h1>
-<p>Find me in app/views/rooms/show.html.erb</p>
+<div class="room_show">
+    <h3>こちら側にルームの詳細ページが入ります</h3>
+    <div>
+        </table>
+            <div>
+                <th>部屋写真</th>
+                <td><%= @room.room_name %></td>
+            </div>
+            
+            <div>
+                <th>ユーザー写真</th>
+                <td><%= @room.room_name %></td>
+            </div>
 
-<%= @room.room_name %>
+            <div>
+                <th>部屋名前</th>
+                <td><%= @room.room_name %></td>
+            </div>
 
+            <div>
+                <th>部屋住所</th>
+                <td><%= @room.room_address %></td>
+            </div>
+            <div>
+                <th>ルーム紹介</th>
+                <td><%= @room.room_PR %></td>
+            </div>
+        
+        </table>
+    </div>
+</div>
 
+<div class="reservation_new">
+	
+	<%= form_for @room, method: :get, url: reserve_confirm_path do |form| %>
+		<div>
+			<dt>¥<%= @room.room_price %>/日<dt>
+		</div>
+	<% end %>
+	<%= form_for @reserve, method: :post, url: reserve_confirm_path do |form| %>
+		<dl>
+			
+			<dt>開始日</dt>
+			<dd><%= form.date_field :start_date %></dd>
+			<dt>終了日</dt>
+			<dd><%= form.date_field :end_date %></dd>
+			<dt>人数</dt>
+			<dd><%= form.number_field :num_people %></dd>
+		</dl>
+
+		<%= form.submit '確認画面へ' %>
+	<% end %>
+</div>
 
  
 

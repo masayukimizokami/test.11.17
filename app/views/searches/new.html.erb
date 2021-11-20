@@ -1,4 +1,9 @@
 <h1>検索ページnew</h1>
     
+
     <%= link_to "検索結果のページへリング", "/searches/:id" %>
+
+    <%= form_with url:"/searches/:id" , local: true do |f| %>
+        <%= f.text_field :title %>
+    <% end %>
 
