@@ -1,19 +1,19 @@
 <h1>予約内容確認</h1>
 <div>
-   <h1>¥６０００/日</h1>
-
+   <h1>¥６０００/日（工事中）</h1>
 	<dl>
-		<dt>開始日</dt>
-		<dd><%= @reserve.start_date %></dd>
-		<dt>終了日</dt>
-		<dd><%= @reserve.end_date %></dd>
 		
-		<dt>使用人数：</dt>
-		<dd><%= @reserve.num_people %></dd>
+		<dt>開始日</dt>
+		<dd><%= @reserve.start_date.strftime('%Y年%m月%d日')  %></dd>
+		<dt>終了日</dt>
+		<dd><%= @reserve.end_date.strftime('%Y年%m月%d日')  %></dd>
+		
+		<dt>使用日数：</dt>
+		<dd><%= @reserve.total_date %></dd>
 		<dt>人数：</dt>
-		<dd><%= @reserve.note %></dd>
+		<dd><%= @reserve.num_people %></dd>
 		<dt>合計金額</dt>
-		<dd><%= @reserve.note %></dd>
+		<dd><%= @reserve.total_price %></dd>
 	</dl>
 	<p>上記内容でよろしければ「予約を確定」を押してください</p>
 

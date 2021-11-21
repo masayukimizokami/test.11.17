@@ -6,8 +6,9 @@ class ReserveController < ApplicationController
 	def new
 		@reserve = Reserve.new
 		@room = Room.find(params[:id])
-		@date_gap = @reservation.date_gap.to_i
-        @reservation.total_price = @room.room_price * @reservation.num_people * @date_gap
+		@reservation.total_date = @reservation.end_date - @reservation.start_date
+		@total_date = @reservation.total_date.to_i
+        @reservation.total_price = @room.room_price * @reservation.num_people * @reservation.total_date
 	end
 
 	def back
@@ -17,6 +18,7 @@ class ReserveController < ApplicationController
 
 	def confirm
 		@reserve = Reserve.new(@attr)
+		session[:reserve] = @reserve
 		if @reserve.invalid?
 			render :new
 		end
@@ -24,13 +26,17 @@ class ReserveController < ApplicationController
 
 	def complete
 		Reserve.create!(@attr)
+		
+		@reserve = Reserve.find(params[:id])
+
 	end
 
 	private
 
 	def permit_params
-		@attr = params.require('room').permit(:room_name, :room_price, :room_address, :room_id)
-		@attr = params.require('reserve').permit(:id, :reserve_date, :name, :note, :user_id, :room_id, :start_date, :end_date, :num_people, :room_price, :total_price, :date_gap)
+
+		@attr = (params.require('reserve').permit(:id,:name, :note, :user_id, :room_id, :start_date, :end_date, :num_people, :room_price, :total_price, :total_date))
 	end
 
+	
 end
