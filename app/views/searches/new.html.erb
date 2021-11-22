@@ -1,9 +1,16 @@
 <h1>検索ページnew</h1>
-    
 
-    <%= link_to "検索結果のページへリング", "/searches/:id" %>
+<%= form_for @search, html: {class:"pure-form"} do |s| %>
 
-    <%= form_with url:"/searches/:id" , local: true do |f| %>
-        <%= f.text_field :title %>
-    <% end %>
+  <div class="field">
+    <%= s.label :keywords %><br />
+    <%= s.text_field :keywords %>
+  </div>
 
+  
+
+  
+  <div class="actions"><%= s.submit "検索"%></div>
+<% end %>
+
+<p><%= link_to "戻る",rooms_path %></p>

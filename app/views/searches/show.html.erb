@@ -1,7 +1,21 @@
 <h1>検索ページshow</h1>
 
- <%= link_to "部屋詳細・予約ページへリング", "/reserve/new" %>
+<p><%= link_to "戻る",new_search_path %></p>
 
- <%= link_to "スケジュールを編集する", "/reserve/new", @room %>
+<% if @search.search_rooms.empty?%>
 
+  <p>何もないよ</p>
 
+<% else %>
+
+  <% @search.search_rooms.each do |c| %>
+    <br>
+
+    <div class="div">
+      <h1><%= c.room_name %></h1>
+      <p>料金<%= c.room_price %></p>
+      <p>住所:<%= c.room_address %></p>
+      <p>ルーム情報:<%= c.room_PR %></p>
+    </div>
+  <% end %>
+<% end %>
