@@ -30,8 +30,18 @@
 
         <% if user_signed_in?%>
 
+         <%= current_user.name %>
+
+              <%= current_user.id %>
+
+              <%= current_user.email %>
+
         
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "button is-warning is-light" %>
+              <%= link_to "ルームを登録する", "/rooms/new" %>
+              <%= link_to "登録済みルーム", users_path(current_user)  %>
+              <%= link_to "予約済みルーム", "/rooms/reserve" %>
+              <%= link_to "設定", user_path(current_user) %>
             <% if user_signed_in? %>
               
             <% end %>
@@ -44,10 +54,7 @@
 
          <div class="header-right">
            
-              <%= link_to "ルームを登録する", "/rooms/new" %>
-              <%= link_to "登録済みルーム", users_path(current_user)  %>
-              <%= link_to "予約済みルーム", "/rooms/reserve" %>
-              <%= link_to "設定", user_path(current_user) %>
+              
               
               
          </div>
