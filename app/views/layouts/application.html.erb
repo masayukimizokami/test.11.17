@@ -28,6 +28,15 @@
           <h1 class="title is-4" style="font-family: cursive;">jaran</h1>
         <% end %>
 
+          <%= form_for @search, html: {class:"pure-form"} do |s| %>
+
+            <div class="field">
+              <%= s.label :keywords %><br />
+              <%= s.text_field :keywords %>
+            </div>
+            <div class="actions"><%= s.submit "検索"%></div>
+          <% end %>
+
         <% if user_signed_in?%>
 
          <%= current_user.name %>

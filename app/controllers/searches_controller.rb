@@ -11,6 +11,8 @@ class SearchesController < ApplicationController
 
     def show
         @search = Search.find(params[:id])
+        @users = User.all
+        @rooms = Room.all
         
     end
 
