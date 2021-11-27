@@ -13,10 +13,12 @@ class UsersController < ApplicationController
   def index
     @users = User.all
     @rooms = Room.all
+    @search = Search.new
   end
 
   def show
     @user = User.find(params[:id])
+    @search = Search.new
   end
 
   def edit
@@ -27,6 +29,14 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.update(user_params)
     redirect_to user_path(@user)
+  end
+
+  def registrantions
+    @search = Search.new
+  end
+
+  def sessions
+    @search = Search.new
   end
 
   private

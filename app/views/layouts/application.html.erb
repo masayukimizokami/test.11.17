@@ -8,67 +8,18 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   </head>
 
   <body>
       <header>
-        <% if flash[:notice] %>
-          <div class="notification is-info">
-            <p class="notice"><%= notice %></p>
-          </div>
-        <% end %>
-
-        <% if flash[:alert] %>
-          <div class="notification is-danger">
-            <p class="alert"><%= alert %></p>
-          </div>
-        <% end %>
-
-        <%= link_to root_path, class: "navbar-item" do %>
-          <h1 class="title is-4" style="font-family: cursive;">jaran</h1>
-        <% end %>
-
-          <%= form_for @search, html: {class:"pure-form"} do |s| %>
-
-            <div class="field">
-              <%= s.label :keywords %><br />
-              <%= s.text_field :keywords %>
-            </div>
-            <div class="actions"><%= s.submit "検索"%></div>
-          <% end %>
-
-        <% if user_signed_in?%>
-
-         <%= current_user.name %>
-
-              <%= current_user.id %>
-
-              <%= current_user.email %>
-
-        
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "button is-warning is-light" %>
-              <%= link_to "ルームを登録する", "/rooms/new" %>
-              <%= link_to "登録済みルーム", users_path(current_user)  %>
-              <%= link_to "予約済みルーム", "/rooms/reserve" %>
-              <%= link_to "設定ページ", user_path(current_user) %>
-            <% if user_signed_in? %>
-              
-            <% end %>
-          
-          
-        <% else %>
-          <%= link_to "ログイン", new_user_session_path, class: "button is-warning is-light" %>   
-          <%= link_to "新規登録", new_user_registration_path,  class: "button is-warning is-light" %>
-        <% end %>
-
-         <div class="header-right">
-           
-              
-              
-              
-         </div>
+        <%= render "shared/partial" %><!--sharedに実装-->
       </header>
     <%= yield %>
+    <footer>
+        <%= render "shared/partial2" %><!--sharedに実装-->
+    </footer>
+    
   </body>
       
 

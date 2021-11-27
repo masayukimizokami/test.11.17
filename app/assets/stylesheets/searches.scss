@@ -9,3 +9,62 @@
     height: auto;
 }
 
+.background-photo{
+    position: relative;
+    height:500px;
+    width: 100%;
+}
+
+  /*検索のBOX*/
+  .search-box{
+      position:  absolute;
+      background: white;        
+      width: 500px;
+      height: 300px;
+      margin: 10px;
+      padding:  20px;             
+      left:  50px;                
+      top: 50px;  
+}
+
+/*探すボタン*/
+.actions{
+    
+
+}
+
+.search-text{
+    font-size: 30px;
+}
+
+.search-ereas{
+    position: relative;
+    width: 1000px;
+    height: 500px;
+    background-color: white;
+
+}
+
+.eraebox{
+    position:  absolute;    
+    width: 200px;
+    height: 200px;
+               
+    top: 50px;  
+}
+.tokyo{
+    left:  50px;   
+}
+
+.osaka{
+    left:  300px;   
+}
+
+.fukuoka{
+    left:  55px;   
+}
+
+.sapporo{
+    left:  700px;   
+}
+

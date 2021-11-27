@@ -13,20 +13,22 @@ class ReserveController < ApplicationController
 
 	def back
 		@reserve = Reserve.new(@attr)
-		render :new
+		redirect_to :rooms
 	end
 
 	def confirm
 		@reserve = Reserve.new(@attr)
+		@search = Search.new
 		session[:reserve] = @reserve
 		if @reserve.invalid?
-			render :new
+			redirect_to :room/(room)
+		else
 		end
 	end
 
 	def complete
 		Reserve.create!(@attr)
-		
+		@search = Search.new
 		@reserve = Reserve.find(params[:id])
 
 	end

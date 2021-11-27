@@ -1,6 +1,7 @@
 class RoomsController < ApplicationController
   def reserve
     @reserves = Reserve.new
+    @search = Search.new
   end
   
   def myroom
@@ -14,17 +15,25 @@ class RoomsController < ApplicationController
   def show
     @room = Room.find(params[:id])
     @reserve = Reserve.new
+    @search = Search.new
+
   end
 
   def new
     @room = Room.new
+    @search = Search.new
   end
 
   def create
     @room = Room.new(params.require(:room).permit(:room_name, :room_PR, :room_price, :room_address,:image))
     @room.user_id = current_user.id
-    @room.save
-    redirect_to room_path(@room)
+    if@room.save
+      flash[:notice]="新しい部屋を登録しました"
+      redirect_to room_path(@room)
+    else
+      flash[:notice]="部屋を登録できませんでした"
+      render"new"
+    end 
   end
 
   def edit
@@ -33,8 +42,13 @@ class RoomsController < ApplicationController
 
   def update
     @room = Room.find(params[:id])
-    @room.update(room_params)
+   if @room.update(room_params)
+    flash[:notice]="部屋を編集しました"
     redirect_to room_path(@room)
+   else
+    flash[:notice]="部屋を編集できませんでした"
+    render"edit"
+   end
   end
 
   def destroy

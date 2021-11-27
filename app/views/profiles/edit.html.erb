@@ -1,28 +1,49 @@
-<h1>プロフィールページ</h1>
+<!--サイドバー部分-->
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                
+                     <%= link_to("アカウント", "/users/#{current_user.id}", {class: "sidebar-account"}) %>
+                     <%= link_to("プロフィール", "/profiles/#{current_user.id}/edit", {class: "sidebar-profile"}) %>
+                
+                <hr>
+            </div>
+        </div>
+     
+ 
+<!--メイン部分-->
+            <div class="col py-3">
+                <h1>プロフィールページ</h1>
 
-<%= form_for @user do |f| %>
+                  <%= form_for @user do |f| %>
 
-<div class="field">
-    
-  <div class="field">
-    <%= f.label :アイコン画像 %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "ファイルを選択" %>
-  </div>
+                  <div class="field">
+                      
+                    <div class="field">
+                      <%= f.label :アイコン画像 %><br />
+                      <%= f.text_field :name, autofocus: true, autocomplete: "ファイルを選択" %>
+                    </div>
 
-　<div class="field">　
-    <%= f.label :名前 %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "名前" %>
-  </div>
+                  　<div class="field">　
+                      <%= f.label :名前 %><br />
+                      <%= f.text_field :name, autofocus: true, autocomplete: "名前" %>
+                    </div>
 
-  <div class="field">
-    <%= f.label :自己紹介 %><br />
-    <%= f.text_area :profile, autofocus: true, autocomplete: "自己紹介を入力" %>
-  </div>
+                    <div class="field">
+                      <%= f.label :自己紹介 %><br />
+                      <%= f.text_area :profile, autofocus: true, autocomplete: "自己紹介を入力" %>
+                    </div>
 
 
-   <div class="actions">
-    <%= f.submit "更新" %>
-  </div>
+                    <div class="actions">
+                      <%= f.submit "更新" %>
+                    </div>
 
-<% end %>
+                  <% end %>
 
+
+            </div>
+        
+    </div>
+</div>
