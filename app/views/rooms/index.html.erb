@@ -3,7 +3,15 @@
 
 
 
-<h1>部屋の一覧紹介</h1>
+<h1>部屋の一覧紹介 検索</h1>
+<h1>ユーザー検索</h1>
+<%= search_form_for @q, url: search_rooms_path do |f| %>
+  <%= f.label :room_name_cont, 'ルーム名' %>
+  <%= f.search_field :room_name_cont %>
+  <br>
+  <%= f.submit '検索' %>
+<% end %>
+
 
 
 

@@ -8,9 +8,13 @@ Rails.application.routes.draw do
   
   get 'home/index'
   devise_for :users
-  root to: "searches#new"
+  root to: "rooms#index"
   resources :users 
-  resources :rooms
+  resources :rooms do
+      collection do
+        get 'search'
+      end
+    end
   resources :searches
 
   
@@ -20,5 +24,7 @@ Rails.application.routes.draw do
   post 'reserve/confirm' # 確認画面
   post 'reserve/back' # 確認画面から「入力画面に戻る」をクリックしたとき
   post 'reserve/complete' # 完了画面
+
+   
 
 end

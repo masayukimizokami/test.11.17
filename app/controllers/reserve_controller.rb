@@ -20,7 +20,7 @@ class ReserveController < ApplicationController
 		@search = Search.new
 		session[:reserve] = @reserve
 		if @reserve.invalid?
-			redirect_to :room/(room)
+			#redirect_to :rooms/(room)
 		else
 		end
 	end

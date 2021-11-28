@@ -1,4 +1,5 @@
 class RoomsController < ApplicationController
+  before_action :set_q, only: [:index,:search]
   def reserve
     @reserves = Reserve.new
     @search = Search.new
@@ -57,5 +58,13 @@ class RoomsController < ApplicationController
     redirect_to rooms_path
   end
 
-  
+  def search
+    @results = @q.result
+  end
+
+  private
+
+  def set_q
+    @q = Room.ransack(params[:q])
+  end
 end

@@ -1,4 +1,5 @@
 class Reserve < ApplicationRecord
+      belongs_to :room #部屋データ
 
       validates :num_people, presence: true,numericality: true
       validates :start_date, presence: true
@@ -11,7 +12,7 @@ class Reserve < ApplicationRecord
       
      
       def total_price
-             num_people * total_date.to_i
+            5000 * num_people * total_date.to_i
       end
 
       
