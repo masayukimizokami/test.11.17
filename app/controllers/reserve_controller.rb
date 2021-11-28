@@ -7,8 +7,7 @@ class ReserveController < ApplicationController
 		@reserve = Reserve.new
 		@room = Room.find(params[:id])
 		@reservation.total_date = @reservation.end_date - @reservation.start_date
-		@total_date = @reservation.total_date.to_i
-        @reservation.total_price = @room.room_price * @reservation.num_people * @reservation.total_date
+		
 	end
 
 	def back
