@@ -15,14 +15,14 @@
           <%= image_tag 'https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png'  %>
         <% end %>
 
-        <nav class="navbar navbar-light bg-light"><!--bootstrap-->
-  <div class="container-fluid">
-    <form class="d-flex">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
+        
+        <%= search_form_for @q, url: search_rooms_path do |f| %>  
+            <%= f.label :room_name_cont, 'ルーム名' %>
+            <%= f.search_field :room_name_cont %>
+            <br>
+            
+        <% end %>
+
 
         <% if user_signed_in?%>
 

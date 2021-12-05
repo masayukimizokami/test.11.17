@@ -1,5 +1,5 @@
 class RoomsController < ApplicationController
-  before_action :set_q, only: [:index,:search]
+  before_action :set_q
   def reserve
     @reserves = Reserve.new
     @search = Search.new
