@@ -64,9 +64,20 @@
             まちまち
           </a>
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="/rooms/new">ルームを登録する</a></li>
+    <!----> <li><a class="dropdown-item" href="/users[current_user]">登録済みルーム</a></li>
+            <li><a class="dropdown-item" href="/rooms/reserve">予約済みルーム</a></li>
+    <!----> <li><a class="dropdown-item" href=/users/[:id]>設定ページ</a></li>
+    <!---->  <li><a class="dropdown-item" href="/destroy/user/session/path">ログアウト</a></li>
+
+            
+              <li><a class="dropdown-item"><%= link_to "ルームを登録する", "/rooms/new"%></a></li>
+                <li><%= link_to "登録済みルーム", users_path(current_user)  %></li>
+                <li><%= link_to "予約済みルーム", "/rooms/reserve" %></li>
+               <li> <%= link_to "設定ページ", user_path(current_user) %></li>
+                
+
+
           </ul>
         </li>
       </ul>
