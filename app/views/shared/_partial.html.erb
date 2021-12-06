@@ -71,7 +71,7 @@
     <!---->  <li><a class="dropdown-item" href="/destroy/user/session/path">ログアウト</a></li>
 
             
-              <li><a class="dropdown-item"><%= link_to "ルームを登録する", "/rooms/new"%></a></li>
+              <li><%= link_to "ルームを登録する", "/rooms/new"%></li>
                 <li><%= link_to "登録済みルーム", users_path(current_user)  %></li>
                 <li><%= link_to "予約済みルーム", "/rooms/reserve" %></li>
                <li> <%= link_to "設定ページ", user_path(current_user) %></li>
