@@ -18,6 +18,8 @@ class ReserveController < ApplicationController
 	def confirm
 		@reserve = Reserve.new(@attr)
 		@search = Search.new
+		@reserve_price = @reserve.total_price#合計金額
+		binding.pry
 		session[:reserve] = @reserve
 		if @reserve.invalid?
 			#redirect_to :rooms/(room)
