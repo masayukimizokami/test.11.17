@@ -1,13 +1,17 @@
+// Place all the styles related to the rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
 .room_image{
     width: 500px;
     height: auto;
 }
 
-.top_erea{
+.top_area{
     position: relative;
     bottom: 50px;
 }
-.city_erea{
+.city_area{
     position: relative;
     display: flex;
 }
