@@ -49,7 +49,7 @@
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "button is-warning is-light" %>
           </div>
           <div class="jsbutton">
-                  <%= link_to "ルームを登録するi", "/rooms/new" %>
+                  <%= link_to "ルームを登録する", "/rooms/new" %>
                   <%= link_to "登録済みルーム", users_path(current_user)  %>
                   <%= link_to "予約済みルーム", "/rooms/reserve" %>
                   <%= link_to "設定ページ", user_path(current_user) %>
