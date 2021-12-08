@@ -1,61 +1,54 @@
-<div class="background-photo">
-  <%= image_tag 'https://presite-potepancamp-rails-02.herokuapp.com/assets/img_cover_top.jpg' %>
-   
-   <div class="search-box"><!--検索フォーム-->
-      <div class="search-text">
-        <h1>Potepan Shareでまだ体験したことのない旅をしよう</h1>
-      </div>
-
-        <%= search_form_for @q, url: search_rooms_path do |f| %>
-            <%= f.label :room_name_cont, 'ルーム名' %>
-            <%= f.search_field :room_name_cont %>
-            <br>
-            <%= f.submit '検索' %>
-        <% end %>
-
-    </div>
-</div>
-<div class="search-ereas">
-<
-      <%= link_to "千葉", "/rooms/search?q%5Broom_address_cont%5D=千葉" %>
-      <h1>千葉だ</h1>
-      <div class="tokyo">
-        <%= link_to root_path do %>
-        <div class="eraebox">
-          <%= image_tag 'https://presite-potepancamp-rails-02.herokuapp.com/assets/img_tokyo.jpg' %>
+<div class="top_erea">
+  <div class="background-photo">
+    <%= image_tag 'https://presite-potepancamp-rails-02.herokuapp.com/assets/img_cover_top.jpg' %>
+    
+    <div class="search-box"><!--検索フォーム-->
+        <div class="search-text">
+          <h1>Potepan Shareでまだ体験したことのない旅をしよう</h1>
         </div>
-        <p>東京</p>
-        <% end %>
-      </div>
 
-      <div class="osaka">
-        <%= link_to root_path do %>
-        <div class="eraebox">
-          <%= image_tag 'https://presite-potepancamp-rails-02.herokuapp.com/assets/img_osaka.jpg' %>
-        </div>
-        <p>東京</p>
-        <% end %>
-      </div>
+          <%= search_form_for @q, url: search_rooms_path do |f| %>
+              <%= f.label :room_name_cont, 'ルーム名' %>
+              <%= f.search_field :room_name_cont %>
+              <br>
+              <%= f.submit '検索' %>
+          <% end %>
 
-      <div class="fukuoka">
-        <%= link_to root_path do %>
-        <div class="eraebox">
-          <%= image_tag 'https://presite-potepancamp-rails-02.herokuapp.com/assets/img_fukuoka.jpg' %>
-        </div>
-        <p>東京</p>
-        <% end %>
       </div>
-
-      <div class="sapporo">
-        <%= link_to root_path do %>
-        <div class="eraebox">
-          <%= image_tag 'https://presite-potepancamp-rails-02.herokuapp.com/assets/img_sapporo.jpg' %>
-        </div>
-        <p>東京</p>
-        <% end %>
-      </div>
-<div>
-
-    <p><%= link_to "戻る",rooms_path %></p>
   </div>
+</div>
 
+<div class="second_erea">
+
+<h2>おすすめエリア</h2>
+
+  <div class="city_erea">
+
+    <div class="city">
+        <a href="/rooms/search?q%5Broom_address_cont%5D=千葉" ><img src='https://presite-potepancamp-rails-02.herokuapp.com/assets/img_tokyo.jpg'></a>
+        <p><%= link_to "", "/rooms/search?q%5Broom_address_cont%5D=千葉" %></p>
+        <h3>東京</h3>
+    </div>
+
+    <div class="city">
+        <a href="/rooms/search?q%5Broom_address_cont%5D=千葉" ><img src='https://presite-potepancamp-rails-02.herokuapp.com/assets/img_osaka.jpg'></a>
+        <p><%= link_to "", "/rooms/search?q%5Broom_address_cont%5D=千葉" %></p>
+        <h3>大阪</h3>
+    </div>
+
+    <div class="city">
+        <a href="/rooms/search?q%5Broom_address_cont%5D=千葉" ><img src='https://presite-potepancamp-rails-02.herokuapp.com/assets/img_kyoto.jpg'></a>
+        <p><%= link_to "", "/rooms/search?q%5Broom_address_cont%5D=千葉" %></p>
+        <h3>福岡</h3>
+    </div>
+
+    <div class="city">
+        <a href="/rooms/search?q%5Broom_address_cont%5D=千葉" ><img src='https://presite-potepancamp-rails-02.herokuapp.com/assets/img_sapporo.jpg'></a>
+        <p><%= link_to "", "/rooms/search?q%5Broom_address_cont%5D=千葉" %></p>
+        <h3>札幌</h3>
+    </div>
+
+
+  </div>
+</div>
+  

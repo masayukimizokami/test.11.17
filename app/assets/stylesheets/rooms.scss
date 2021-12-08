@@ -1,8 +1,39 @@
-// Place all the styles related to the rooms controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
-
 .room_image{
     width: 500px;
     height: auto;
 }
+
+.top_erea{
+    position: relative;
+    bottom: 50px;
+}
+.city_erea{
+    position: relative;
+    display: flex;
+}
+
+.city img{
+   width: 250px;
+   height: 350px;
+   border-radius: 10px;
+}
+
+.city{
+    position: relative;
+    margin: 30px;
+    padding: 10px;
+}
+
+.city h3{
+    position: absolute;
+    top: 260px;
+    left: 90px;
+    text-align: center;
+    color: azure;
+    font-weight: 900;
+    font-size: 40px;
+}
+
+
+
+
