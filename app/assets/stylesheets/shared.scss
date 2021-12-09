@@ -1,3 +1,12 @@
+.header_area{
+  display: flex;
+}
+。right_area{
+  margin-left: 400px;
+}
+.center_area{
+  width: 500px;
+}
 .background-photo{
   background-image: url(https://presite-potepancamp-rails-02.herokuapp.com/assets/img_cover_top.jpg);
 }
@@ -5,4 +14,17 @@
 .searchbox_area{
 display: flex;
 }
+.searchbox{
+  padding-top: 30px;
+  }
 
+.user_info{
+ display: flex;
+ padding-top:50px;
+}
+
+.user_icon li{
+  color: rgb(255, 255, 255);
+  text-decoration:none ;
+ }
+ 

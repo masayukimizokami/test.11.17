@@ -2,20 +2,29 @@
 
 
 <%= form_for @room do |f| %>
-<%= f.label :ルームイメージ %>
-<%= f.file_field :image %>
+<div class="new_box">
+    <table>
+        <tr>
+            <th><%= f.label :ルームイメージ %></th>
+            <td><%= f.file_field :image %></td>
+        </tr>
 
-<%= f.label :ルーム名 %>
-<%= f.text_field :room_name %>
+        <tr>
+            <th><%= f.label :ルーム名 %></th>
+            <td><%= f.text_field :room_name %></td>
 
-<%= f.label :ルーム紹介 %>
-<%= f.text_area :room_PR%>
+        <tr>
+            <th><%= f.label :ルーム紹介 %></th>
+            <td><%= f.text_area :room_PR%></td>
 
-<%= f.label :料金 %>
-<%= f.text_field :room_price %>
+        <tr>
+            <th><%= f.label :料金 %></th>
+            <td><%= f.text_field :room_price %></td>
 
-<%= f.label :住所 %>
-<%= f.text_field :room_address %>
-
-<%= f.submit  "登録" %>
+        <tr>
+            <th><%= f.label :住所 %></th>
+            <td><%= f.text_field :room_address %></td>
+        </table>
+             <%= f.submit  "登録" %>
+    </div>
 <% end %>
