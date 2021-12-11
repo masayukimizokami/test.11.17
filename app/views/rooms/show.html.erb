@@ -1,50 +1,39 @@
+<h3>こちら側にルームの詳細ページが入ります</h3>
+
 <div class="room_show">
-    <h3>こちら側にルームの詳細ページが入ります</h3>
-    <div>
-        </table>
-            
-            <div>        
-                <th>部屋写真</th>
-                <td>
-                    <div class="room_image">                      
-                 </td>
-            </div>
-            <div>
-                <th>部屋名前</th>
-                <td><%= @room.room_name %></td>
-            </div>
-            <div>
-                <th>部屋住所</th>
-                <td><%= @room.room_address %></td>
-            </div>
-            <div>
-                <th>ルーム紹介</th>
-                <td><%= @room.room_PR %></td>
-            </div>       
-        </table>
+  <div class="content-wrap">
+    <div class="room-show-wrap">
+             
+                    <p class="showImg"><img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_tokyo.jpg" alt="no img"></p>
+                    <p class="showText"><%= @room.room_name %></p>
+                    <p class="showText"><%= @room.room_address %></p>
+                    <p class="showText"><%= @room.room_PR %></p>
+                 
     </div>
-</div>
 
-<div class="reservation_new">
-	
-	<%= form_for @room, method: :get, url: reserve_confirm_path do |form| %>
-		<div>
-			<dt>¥<%= @room.room_price %>/日<dt>
-		</div>
-	<% end %>
-	<%= form_for @reserve, method: :post, url: reserve_confirm_path do |form| %>
-		<dl>
-			
-			<dt>開始日</dt>
-			<dd><%= form.date_field :start_date %></dd>
-			<dt>終了日</dt>
-			<dd><%= form.date_field :end_date %></dd>
-			<dt>人数</dt>
-			<dd><%= form.number_field :num_people %></dd>
-		</dl>
+    <div class="reservation-new-wrap">
+        
+        <%= form_for @room, method: :get, url: reserve_confirm_path do |form| %>
+            <div>
+                <dt>¥<%= @room.room_price %>/日<dt>
+            </div>
+        <% end %>
+        <%= form_for @reserve, method: :post, url: reserve_confirm_path do |form| %>
+            <dl>
+                
+                <dt>開始日</dt>
+                <dd><%= form.date_field :start_date %></dd>
+                <dt>終了日</dt>
+                <dd><%= form.date_field :end_date %></dd>
+                <dt>人数</dt>
+                <dd><%= form.number_field :num_people %></dd>
+            </dl>
 
-		<%= form.submit '確認画面へ' %>
-	<% end %>
+            <%= form.submit '確認画面へ' %>
+        <% end %>
+      
+    </div>
+  </div>
 </div>
 
  

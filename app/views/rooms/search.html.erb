@@ -1,30 +1,33 @@
 <h1>検索結果</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Age</th>
-      <th>Height</th>
-      <th>Weight</th>
-      <th>Gender</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-    <tbody>
-    <div class="search_box">
-      <% @results.each do |room| %>
-      
-        <tr>
-          <td><%= room.room_name %></td>
-          <td><%= room.room_price %></td>
-           <td><%= link_to 'Show', room %></td>
-        </tr>
-      <% end %>
+<div class="content">
+  <div class="card-wrap">
+   
 
-    </tbody>
+    
+        <table>
+          
+
+            <tbody>
+            
+              <% @results.each do |room| %>
+               <%= link_to room_path(room) do %>
+                <div class="card-list">
+                  <p><img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_tokyo.jpg" alt="no img"></p>
+                    <h1 class="card-listImage"><%= room.room_name %></h1>
+                    <h2 class="card-listImage"><%= room.room_price %>円</h2>
+                    <h4 class="card-listPR"><%= room.room_PR %></h4>
+                    <h3 class="card-listImage"><%= link_to 'Show', room %></h3>
+                </div>
+                <% end %>
+              <% end %>
+
+            </tbody>
+         
+        </table>
+
+        <%= link_to 'Top', rooms_path %>
+    
   </div>
-</table>
-
-<%= link_to 'Top', rooms_path %>
+</div>
 

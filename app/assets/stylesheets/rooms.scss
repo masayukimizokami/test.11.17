@@ -51,3 +51,62 @@
     text-align: center;
 }
 
+/*検索結果ページ*/
+.content{
+    max-width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.card-wrap{
+    display: flex;
+    /*justify-content: space-between;*/
+    flex-wrap: wrap;
+}
+
+.card-list{
+    max-width: 300px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+    border: solid 3px #000000;
+    text-decoration: none;
+}
+.card-list:nth-child(3n){  
+    margin-right: 0;
+}
+
+.card-list img{
+    width: 100%;
+}
+
+.card-listImage{
+    font-weight: bold;
+    margin: 30px 0;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1.6;
+}
+
+/*詳細ページ*/
+.showImg{
+    max-width: 300px;
+}
+
+.room_show{
+    width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+    border: none;
+}
+
+.content-wrap{
+    display: flex;
+    margin-left: auto;
+}
+
+.card-wrap{
+    display: flex;
+    /*justify-content: space-between;*/
+    flex-wrap: wrap;
+}
+
