@@ -3,17 +3,12 @@
 <div class="content">
   <div class="card-wrap">
    
-
-    
         <table>
-          
-
             <tbody>
-            
               <% @results.each do |room| %>
                <%= link_to room_path(room) do %>
                 <div class="card-list">
-                  <p><img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_tokyo.jpg" alt="no img"></p>
+                  <p><%= image_tag @room.image %></p><!--部屋の写真でエラーが出る-->
                     <h1 class="card-listImage"><%= room.room_name %></h1>
                     <h2 class="card-listImage"><%= room.room_price %>円</h2>
                     <h4 class="card-listPR"><%= room.room_PR %></h4>
@@ -21,9 +16,7 @@
                 </div>
                 <% end %>
               <% end %>
-
             </tbody>
-         
         </table>
 
         <%= link_to 'Top', rooms_path %>

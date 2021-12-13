@@ -1,11 +1,12 @@
-<h3>こちら側にルームの詳細ページが入ります</h3>
+<h3>こちら側ルームの詳細ページが入ります</h3>
 
 <div class="room_show">
   <div class="content-wrap">
     <div class="room-show-wrap">
              
-                    <p class="showImg"><img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_tokyo.jpg" alt="no img"></p>
-                    <p class="showText"><%= @room.room_name %></p>
+                    <p class="showImg"><%= image_tag @room.image %></p>
+                    
+                    <p class="showText"><%= @room.room_name %></p>  
                     <p class="showText"><%= @room.room_address %></p>
                     <p class="showText"><%= @room.room_PR %></p>
                  
