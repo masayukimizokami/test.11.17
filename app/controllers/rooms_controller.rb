@@ -17,8 +17,6 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
     @reserve = Reserve.new
     @search = Search.new
-    
-
   end
 
   def new

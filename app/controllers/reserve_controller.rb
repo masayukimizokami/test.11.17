@@ -39,7 +39,7 @@ class ReserveController < ApplicationController
 
 	def permit_params
 
-		@attr = (params.require('reserve').permit(:id,:name, :note, :user_id, :room_id, :start_date, :end_date, :num_people, :room_price, :total_price, :total_date))
+		@attr = (params.require('reserve').permit(:id, :user_id, :room_id, :start_date, :end_date, :num_people, :total_price, :total_date))
 	end
 
 	

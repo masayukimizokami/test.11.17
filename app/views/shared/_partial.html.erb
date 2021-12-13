@@ -15,13 +15,15 @@
     <div class="lefterea">
                 
       <div class="searchbox_area">
+         <% if user_signed_in? %>
              <ul >
                                   <li><%= link_to "ルームを登録する", "/rooms/new" %></li>
                                   <li> <%= link_to "登録済みルーム", users_path(current_user)  %></li>
                                   <li> <%= link_to "予約済みルーム", "/rooms/reserve" %></li>
                                   <li><%= link_to "設定ページ", user_path(current_user) %></li>
-                                  <li> <%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+                                  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
              </ul>
+          <% end %>
                 <div class="logo">
                   <%= link_to root_path, class: "rogo" do %>
                     <%= image_tag 'https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png'  %>
