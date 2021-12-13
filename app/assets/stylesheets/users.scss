@@ -3,11 +3,55 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
   
-  table td {
-    text-align: center;
-  }
-  
-  table th, table td {
-    border: solid 1px black;
-    padding: 10px 20px;
-  }
+table td {
+  text-align: center;
+}
+
+table th, table td {
+  border: solid 1px black;
+  padding: 10px 20px;
+}
+
+/*登録済みルーム一覧*/
+.content{
+  max-width: 980px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.rooms-index-list{
+  display: flex;
+  /*justify-content: space-between;*/
+  flex-wrap: wrap;
+}
+
+
+.room-name-link{
+  font-size: 20px;
+  color: blue;/*変わらない*/
+}
+
+/*アカウント編集　user/edit */
+.content-edit{
+  max-width: 980px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.content-edit h1{
+  text-align: center;
+}
+
+.field-text{
+ font-size: 20px;
+}
+
+.field-box{
+  width: 300px;
+  border-radius: 5px;
+ }
+
+
+
+ 

@@ -1,28 +1,33 @@
+<div class="content-edit">
+  <h1>アカウント編集</h1>
+
+  <div class="user-edit">
+
 <%= form_for @user do |f| %>
 
 <div class="field">
     
   <div class="field">
-    <%= f.label :メールアドレス %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.label :メールアドレス  ,class:'field-text'%><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" ,class:'field-box'%>
   </div>
 
   <div class="field">
-    <%= f.label :変更後パスワード %>
+    <%= f.label :変更後パスワード  ,class:'field-text'%>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password" ,class:'field-box'%>
   </div>
 
   <div class="field">
-    <%= f.label :パスワード確認用用（変更する場合のみ入力） %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.label :パスワード確認用用（変更する場合のみ入力） ,class:'field-text'%><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password",class:'field-box'%>
   </div>
 
   <div class="field">
-    <%= f.label :現在のパスワード） %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.label :現在のパスワード） ,class:'field-text'%><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" ,class:'field-box'%>
   </div>
 
 
@@ -32,5 +37,5 @@
 
 <% end %>
 
-<%= link_to "戻る", "/plofiles/#{current_user.id}" ,class: "button is-warning is-light"%>
+<%= link_to "戻る", "/users/#{current_user.id}" ,class: "button is-warning is-light"%>
 

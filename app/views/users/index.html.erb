@@ -1,32 +1,37 @@
- <table>
-      <thead>
-        <tr>
-    　　　<th>ルーム画像</th>
-    　　　<th>ルーム名</th>
-    　　　<th>ルーム紹介</th>
-    　　　<th>料金</th>
-    　　　<th>作成日</th>
-      </tr>
-    </thead>
- 
-      <tbody>
-        <% @rooms.each do |room| %>
-          　<tr>
-            <td><%= room.room_name %></td>
+<div class="content">
+  <h1>登録済みルーム一覧</h1>
 
-            <td><%= link_to room_path(room) do %>
-              　　<%= room.room_name %> 
-              <% end %></td>
-
-            
-            <td><%= room.room_PR %></td>
-            <td>¥<%= room.room_price %></td>
-            <td><%= room.updated_at.strftime('%Y年%m月%d日') %></td>
-
-            </td>
-            
+  <div class="rooms-index-list">
+    <table>
+          <thead>
+            <tr>
+        　　　<th>ルーム画像</th>
+        　　　<th>ルーム名</th>
+        　　　<th>ルーム紹介</th>
+        　　　<th>料金</th>
+        　　　<th>作成日</th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
+    
+          <tbody>
+            <% @rooms.each do |room| %>
+              　<tr>
+                <td><%= room.room_name %></td>
+
+                <td><%= link_to room_path(room),class:'room-name-link' do%>
+                  　　<%= room.room_name %>
+                  <% end %></td>
+
+                
+                <td><%= room.room_PR %></td>
+                <td>¥<%= room.room_price %></td>
+                <td><%= room.updated_at.strftime('%Y年%m月%d日') %></td>
+
+                </td>
+                
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+    </div>
 </div>
