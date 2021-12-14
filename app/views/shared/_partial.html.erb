@@ -61,8 +61,12 @@
                           </div>
                           <div class="user_icon">
                           <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                      まちまち
-                                    </a>
+                                      <% if @user.image == nil %>
+                                        <%= image_tag 'no-image.user.png' ,class: 'header-user-image'%>
+                                      <% else %>
+                                        <%= image_tag @user.image,class: 'header-user-image' %>
+                                      <% end %>  
+                           </a>
                             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                                   <li><%= link_to "ルームを登録する", "/rooms/new" %></li>
                                   <li> <%= link_to "登録済みルーム", users_path(current_user)  %></li>
