@@ -61,3 +61,4 @@ gem "refile-mini_magick"
 gem "bulma-rails"
 gem 'ransack'
 gem 'pry-byebug'
+gem 'rails-i18n'
