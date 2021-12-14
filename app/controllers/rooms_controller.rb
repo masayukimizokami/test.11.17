@@ -25,7 +25,7 @@ class RoomsController < ApplicationController
   end
 
   def create
-    @room = Room.new(params.require(:room).permit(:room_name, :room_PR, :room_price, :room_address,:image))
+    @room = Room.new(room_params)
     @room.user_id = current_user.id
     if@room.save
       flash[:notice]="新しい部屋を登録しました"
@@ -62,6 +62,10 @@ class RoomsController < ApplicationController
   end
 
   private
+
+  def room_params
+    params.require(:room).permit(:room_name, :room_PR, :room_price, :room_address,:image)
+  end
 
   def set_q
     @q = Room.ransack(params[:q])
