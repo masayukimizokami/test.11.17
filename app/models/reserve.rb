@@ -11,8 +11,8 @@ class Reserve < ApplicationRecord
 
       
      
-      def total_price
-            room.room_price * num_people * total_date.to_i
+      def total_price(price)
+            price * num_people * total_date.to_i
       end
 
       
