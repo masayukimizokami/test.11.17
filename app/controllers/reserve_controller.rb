@@ -16,7 +16,7 @@ class ReserveController < ApplicationController
 	end
 
 	def confirm
-		@room = Room.find_by(params[:id])
+		@room = Room.find_by(params[:room_id])
 		@reserve = Reserve.new(@attr)
 		@search = Search.new
 		@reserve_price = @reserve.total_price#合計金額

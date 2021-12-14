@@ -12,8 +12,7 @@ class Reserve < ApplicationRecord
       
      
       def total_price
-            #@reserve.room.room_price *
-             num_people * total_date.to_i
+            room.room_price * num_people * total_date.to_i
       end
 
       

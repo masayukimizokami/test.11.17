@@ -13,13 +13,13 @@
     </div>
 
     <div class="reservation-new-wrap">
-        
-        <%= form_for @room, method: :get, url: reserve_confirm_path do |form| %>
+       
             <div>
                 <dt>¥<%= @room.room_price %>/日<dt>
             </div>
-        <% end %>
-        <%= form_for @reserve, method: :post, url: reserve_confirm_path do |form| %>
+       
+       
+        <%= form_for @reserve, method: :post, url: reserve_confirm_path(room_id:@room.id) do |form| %>
             <dl>
                 
                 <dt>開始日</dt>
