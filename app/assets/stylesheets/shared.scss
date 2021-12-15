@@ -16,7 +16,14 @@ display: flex;
 }
 .searchbox{
   padding-top: 30px;
+  position: relative;
   }
+
+.icon{
+  position: absolute;
+  left:150px ;
+}
+
 
 .user_info{
  display: flex;

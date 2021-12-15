@@ -28,6 +28,7 @@ class ReserveController < ApplicationController
 	end
 
 	def complete
+		@room = Room.find(params[:room_id])
 		Reserve.create!(@attr)
 		@search = Search.new
 		@reserve = Reserve.find(params[:id])
