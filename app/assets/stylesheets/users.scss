@@ -29,6 +29,12 @@ table th, table td {
 .room-name-link{
   font-size: 20px;
   color: blue;/*変わらない*/
+  text-decoration: none;
+}
+
+.user-index-image{
+  width: 100px ;
+  height: 70px;
 }
 
 /*アカウント編集　user/edit */

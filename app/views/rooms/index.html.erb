@@ -8,8 +8,8 @@
         </div>
 
           <%= search_form_for @q, url: search_rooms_path do |f| %>
-              <%= f.label :room_name_cont, 'ルーム名' %>
-              <%= f.search_field :room_name_cont %>
+              
+              <%= f.search_field :room_name_or_room_address_or_room_PR_cont ,placeholder: "キーワード検索" %>
               <br>
               <%= f.submit '検索' %>
           <% end %>

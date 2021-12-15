@@ -19,6 +19,7 @@ class ReserveController < ApplicationController
 		@room = Room.find(params[:room_id])
 		@reserve = Reserve.new(@attr)
 		@search = Search.new
+		@reserve = @room.reserves.build
 			
 		session[:reserve] = @reserve
 		if @reserve.invalid?
@@ -32,7 +33,7 @@ class ReserveController < ApplicationController
 		Reserve.create!(@attr)
 		@search = Search.new
 		@reserve = Reserve.find(params[:id])
-
+		@reserve = @room.reserves.build
 	end
 
 	private
