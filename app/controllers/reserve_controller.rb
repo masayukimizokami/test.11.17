@@ -17,9 +17,8 @@ class ReserveController < ApplicationController
 
 	def confirm
 		@room = Room.find(params[:room_id])
-		@reserve = Reserve.new(@attr)
+		@reserve = @room.reserves.build(@attr)
 		@search = Search.new
-		@reserve = @room.reserves.build
 			
 		session[:reserve] = @reserve
 		if @reserve.invalid?
@@ -30,10 +29,10 @@ class ReserveController < ApplicationController
 
 	def complete
 		@room = Room.find(params[:room_id])
-		Reserve.create!(@attr)
+		@reserve = @room.reserves.build(@attr)
+		@reserve.save
 		@search = Search.new
-		@reserve = Reserve.find(params[:id])
-		@reserve = @room.reserves.build
+		
 	end
 
 	private
