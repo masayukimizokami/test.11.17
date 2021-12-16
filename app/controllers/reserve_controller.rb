@@ -2,7 +2,6 @@ class ReserveController < ApplicationController
 
 	before_action :permit_params, except: :new
 
-
 	def new
 		@reserve = Reserve.new
 		@room = Room.find(params[:id])

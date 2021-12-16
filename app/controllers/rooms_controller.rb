@@ -1,7 +1,9 @@
 class RoomsController < ApplicationController
   before_action :set_q
   def reserve
-    @reserves = Reserve.new
+    @reserves = Reserve.all
+    @users = User.all
+    @rooms = Room.all
     @search = Search.new
   end
   
