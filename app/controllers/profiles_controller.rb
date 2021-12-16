@@ -39,6 +39,7 @@ class ProfilesController < ApplicationController
   def update
     respond_to do |format|
       if @profile.update(profile_params)
+        bindling.pry
         redirect_to @profile, notice: "Profile was successfully updated." 
         
       else
@@ -63,6 +64,6 @@ class ProfilesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def profile_params
-      params.fetch(:profile, {})
+      params.fetch(:profile, :image,:name)
     end
 end
