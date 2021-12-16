@@ -29,7 +29,7 @@
                 <dt>人数</dt>
                 <dd><%= form.number_field :num_people %></dd>
             </dl>
-
+            <%= form.hidden_field :room_id,value: @room.id %>
             <%= form.submit '確認画面へ' %>
         <% end %>
       

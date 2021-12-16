@@ -22,48 +22,29 @@ class ProfilesController < ApplicationController
 
   # POST /profiles or /profiles.json
   def create
-    @profile = Profile.new(profile_params)
-
-    respond_to do |format|
-      if @profile.save
-        redirect_to @profile, notice: "Profile was successfully created." 
-       
-      else
-        render :new, status: :unprocessable_entity 
-        
-      end
-    end
+   
   end
 
   # PATCH/PUT /profiles/1 or /profiles/1.json
   def update
-    respond_to do |format|
-      if @profile.update(profile_params)
-        bindling.pry
-        redirect_to @profile, notice: "Profile was successfully updated." 
-        
-      else
-        render :edit, status: :unprocessable_entity 
-      end
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+     flash[:notice]="プロフィールを編集しました"
+     redirect_to user_path(@user)
+    else
+     flash[:notice]="プロフィールを編集できませんでした"
+     render"edit"
     end
+
   end
 
   # DELETE /profiles/1 or /profiles/1.json
   def destroy
-    @profile.destroy
-    respond_to do |format|
-      redirect_to profiles_url, notice: "Profile was successfully destroyed." 
-    end
+    
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_profile
-      @user = User.find(params[:id])
-    end
-
-    # Only allow a list of trusted parameters through.
-    def profile_params
-      params.fetch(:profile, :image,:name)
+    def user_params
+      params.require(:user).permit(:profile, :image,:name)
     end
 end

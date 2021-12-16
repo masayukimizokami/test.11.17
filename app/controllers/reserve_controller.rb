@@ -17,7 +17,7 @@ class ReserveController < ApplicationController
 
 	def confirm
 		@room = Room.find(params[:room_id])
-		@reserve = @room.reserves.build(@attr)
+		@reserve = Reserve.new(@attr)
 		@search = Search.new
 			
 		session[:reserve] = @reserve
@@ -29,7 +29,7 @@ class ReserveController < ApplicationController
 
 	def complete
 		@room = Room.find(params[:room_id])
-		@reserve = @room.reserves.build(@attr)
+		@reserve = Reserve.new(@attr)
 		@reserve.save
 		@search = Search.new
 		
@@ -39,7 +39,7 @@ class ReserveController < ApplicationController
 
 	def permit_params
 
-		@attr = (params.require('reserve').permit(:id, :user_id, :room_id, :start_date, :end_date, :num_people, :total_price, :total_date))
+		@attr = (params.require('reserve').permit(:id, :user_id, :room_id, :start_date, :end_date, :num_people, :total_price, :total_date,:reserve_date,:name,:note))
 	end
 
 	

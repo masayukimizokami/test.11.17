@@ -23,6 +23,7 @@
 		<%= form.hidden_field :reserve_date %>
 		<%= form.hidden_field :name %>
 		<%= form.hidden_field :note %>
+		<%= form.hidden_field :room_id, value: @room.id %>
 		<%= form.submit '予約を確定する' %>
 	<% end %>
 
