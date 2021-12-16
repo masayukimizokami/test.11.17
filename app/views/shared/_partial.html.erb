@@ -1,5 +1,4 @@
 <!---ヘッダーを実装-->
-<div class="header_area">
             <% if flash[:notice] %>
               <div class="notification is-info">
                 <p class="notice"><%= notice %></p>
@@ -11,19 +10,23 @@
                 <p class="alert"><%= alert %></p>
               </div>
             <% end %>
-            
+          <div class="header-top-ul">
+            <% if user_signed_in? %>
+              <ul >
+                   <li><%= link_to "ルームを登録する", "/rooms/new" %></li>
+                   <li> <%= link_to "登録済みルーム", users_path(current_user)  %></li>
+                   <li> <%= link_to "予約済みルーム", "/rooms/reserve" %></li>
+                   <li><%= link_to "設定ページ", user_path(current_user) %></li>
+                   <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+             </ul>
+            <% end %>
+          </div>
+
+<div class="header_area">     
     <div class="lefterea">
                 
       <div class="searchbox_area">
-         <% if user_signed_in? %>
-             <ul >
-                                  <li><%= link_to "ルームを登録する", "/rooms/new" %></li>
-                                  <li> <%= link_to "登録済みルーム", users_path(current_user)  %></li>
-                                  <li> <%= link_to "予約済みルーム", "/rooms/reserve" %></li>
-                                  <li><%= link_to "設定ページ", user_path(current_user) %></li>
-                                  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-             </ul>
-          <% end %>
+        
                 <div class="logo">
                   <%= link_to root_path, class: "rogo" do %>
                     <%= image_tag 'https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png'  %>
@@ -66,16 +69,15 @@
                               <%= current_user.name %>
                           </div>
                           <div class="user_icon"> 
-                            <% if current_user.image.attached?%>
-                              <% image_tag current_user.image,class:'header-user-image' %>
-                            <% else %>
-                               <% image_tag 'no-image.user.png',class:'header-user-image' %>
-                            <% end %>
+                               <% if current_user.image.attached? %>
+                                        <%= image_tag current_user.image,class: 'header-user-image' %>
+                                      <% else %>
+                                        <%= image_tag 'no-image.user.png' ,class: 'header-user-image'%>
+                                      <% end %>
+
                           </div>
                           <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                      
-                                        <%= image_tag 'no-image.user.png',class: 'header-user-image' %>
-                                      
+                                     
                            </a>
                             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                                   <li><%= link_to "ルームを登録する", "/rooms/new" %></li>

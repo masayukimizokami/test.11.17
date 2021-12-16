@@ -10,11 +10,14 @@
 .background-photo{
     top:50px;
     width: 100%;
+    background-size: cover;
 }
 
 .top_area{
     position: relative;
     bottom: 50px;
+    width: 100%;
+    background-size: cover;
 }
 .city_area{
     position: relative;
@@ -25,6 +28,7 @@
    width: 250px;
    height: 350px;
    border-radius: 10px;
+   object-fit: cover;
 }
 
 .city{
@@ -65,11 +69,15 @@
 }
 
 .card-list{
-    max-width: 300px;
+    max-width: 270px;
     margin-right: 40px;
     margin-bottom: 50px;
     border: solid 3px #000000;
     text-decoration: none;
+    color:white;
+}
+.card-list:hover {
+	background-color:#babae9;
 }
 .card-list:nth-child(3n){  
     margin-right: 0;
@@ -88,9 +96,6 @@
 }
 
 /*詳細ページ*/
-.showImg{
-    max-width: 300px;
-}
 
 .room_show{
     width: 980px;
@@ -110,3 +115,18 @@
     flex-wrap: wrap;
 }
 
+.showText{
+    font-size: 20px;
+    font-family: serif;
+}
+
+.showImg{
+    width: 600px;
+    height: 450px;
+}
+
+.showImg image{
+    width: 600px;
+    height: 450px;
+    object-fit: cover;
+}

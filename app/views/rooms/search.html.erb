@@ -8,11 +8,10 @@
               <% @results.each do |room| %>
                <%= link_to room_path(room) do %>
                 <div class="card-list">
-                  <p><%= image_tag room.image %></p><!--部屋の写真でエラーが出る-->
+                  <p><%= image_tag room.image ,class:'search-image'%></p>
                     <h1 class="card-listImage"><%= room.room_name %></h1>
                     <h2 class="card-listImage"><%= room.room_price %>円</h2>
                     <h4 class="card-listPR"><%= room.room_PR %></h4>
-                    <h3 class="card-listImage"><%= link_to 'Show', room %></h3>
                 </div>
                 <% end %>
               <% end %>
