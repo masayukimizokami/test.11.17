@@ -28,7 +28,7 @@
                 <dd><%= form.number_field :num_people %></dd>
             </dl>
             <%= form.hidden_field :room_id,value: @room.id %>
-            <%= form.hidden_field :total_price,value: @reserve.total_price %>
+            
             <%= form.submit '確認画面へ' %>
         <% end %>
       

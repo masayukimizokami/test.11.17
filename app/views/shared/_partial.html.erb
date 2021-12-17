@@ -1,23 +1,13 @@
 <!---ヘッダーを実装-->
-            <% if flash[:notice] %>
-              <div class="notification is-info">
-                <p class="notice"><%= notice %></p>
-              </div>
-            <% end %>
-
-            <% if flash[:alert] %>
-              <div class="notification is-danger">
-                <p class="alert"><%= alert %></p>
-              </div>
-            <% end %>
+           
           <div class="header-top-ul">
             <% if user_signed_in? %>
               <ul >
-                   <li><%= link_to "ルームを登録する", "/rooms/new" %></li>
-                   <li> <%= link_to "登録済みルーム", users_path(current_user)  %></li>
-                   <li> <%= link_to "予約済みルーム", "/rooms/reserve" %></li>
-                   <li><%= link_to "設定ページ", user_path(current_user) %></li>
-                   <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+                   <li><%= link_to "ルームを登録する", "/rooms/new" ,class: "header-link"%></li>
+                   <li> <%= link_to "登録済みルーム", users_path(current_user) ,class: "header-link" %></li>
+                   <li> <%= link_to "予約済みルーム", "/rooms/reserve" ,class: "header-link"%></li>
+                   <li><%= link_to "設定ページ", user_path(current_user) ,class: "header-link"%></li>
+                   <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: "header-link"%></li>
              </ul>
             <% end %>
           </div>
@@ -80,11 +70,11 @@
                                      
                            </a>
                             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                                  <li><%= link_to "ルームを登録する", "/rooms/new" %></li>
-                                  <li> <%= link_to "登録済みルーム", users_path(current_user)  %></li>
-                                  <li> <%= link_to "予約済みルーム", "/rooms/reserve" %></li>
-                                  <li><%= link_to "設定ページ", user_path(current_user) %></li>
-                                  <li> <%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+                                  <li><%= link_to "ルームを登録する", "/rooms/new" ,class: "header-link"%></li>
+                                  <li> <%= link_to "登録済みルーム", users_path(current_user)  ,class: "header-link"%></li>
+                                  <li> <%= link_to "予約済みルーム", "/rooms/reserve" ,class: "header-link"%></li>
+                                  <li><%= link_to "設定ページ", user_path(current_user) ,class: "header-link"%></li>
+                                  <li> <%= link_to "ログアウト", destroy_user_session_path, method: :delete ,class: "header-link"%></li>
                             </ul>
                            </div>
                

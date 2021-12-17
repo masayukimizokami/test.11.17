@@ -19,8 +19,6 @@
                 <h1>プロフィールページ</h1>
                   <%= form_for @user do |f| %>
 
-                  <div class="field">
-
                     <div class="field">
                     　 <% if current_user.image.attached?%>
                            <%= image_tag @user.image,class:'profile-user-image' %>

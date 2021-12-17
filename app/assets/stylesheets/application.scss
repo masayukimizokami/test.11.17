@@ -28,6 +28,7 @@
 
  
   /*フッター*/
+  /*
   .footer-box{
     background-color: black;
     color: white;
@@ -41,7 +42,7 @@
       width:100%;
   }
   #footer{
-      width:100%; /* フッター幅を指定*/
+      width:100%; 
       margin:0 auto;
     background-color: black;
     padding: 30px;
@@ -50,5 +51,37 @@
   #footer p{ 
       color: white;
     text-align: center;
-  } 
+  } */
   
+
+  /*application.html.erb*/
+  body {
+    position: relative;
+  }
+  
+  header {
+    position: relative;
+    height: 150px;
+  }
+  
+  main {
+
+    min-height: calc(100vh - 150px);
+    padding-bottom: 30px;
+    text-align:center;
+  }
+  
+  footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+  }
+
+  .flash-box{
+    height: 40px;
+    position: relative;
+    background-color: black;
+  }
+
