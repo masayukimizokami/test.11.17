@@ -1,5 +1,8 @@
 class Reserve < ApplicationRecord
       belongs_to :room #部屋データ
+      belongs_to :user #ユーザーデータ
+
+
 
       
 

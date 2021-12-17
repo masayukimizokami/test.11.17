@@ -1,10 +1,7 @@
 class RoomsController < ApplicationController
   before_action :set_q
   def reserve
-    @reserves = Reserve.all
-    @users = User.all
-    @rooms = Room.all
-    @search = Search.new
+    @reserve = current_user.reserves
   end
   
   def myroom
