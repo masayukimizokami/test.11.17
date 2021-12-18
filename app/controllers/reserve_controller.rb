@@ -29,7 +29,6 @@ class ReserveController < ApplicationController
 
 	def complete
 		@room = Room.find(params[:room_id])
-		@room = Room.find(params[:room_id])
 		@reserve = Reserve.new(@attr)
 		@reserve.save
 		@search = Search.new
