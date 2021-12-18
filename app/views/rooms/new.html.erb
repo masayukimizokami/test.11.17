@@ -3,34 +3,35 @@
  <%= render "shared/error", obj: @room %>
 
 <%= form_for @room do |f| %>
-<div class="new_box">
-    <div class="new_box_wrap">
-        <div class="field">　
-            <tr>
-                <th><%= f.label :ルームイメージ %></th><br />
-                <td><%= f.file_field :image %></td>
-            </tr>
+    <div class="new_box">
+        <div class="new_box_wrap">
+            <div class="field">　
+                <tr>
+                    <th><%= f.label :ルームイメージ %></th><br />
+                    <td><%= f.file_field :image %></td>
+                </tr>
+            </div>
+            <div class="field">　
+                <tr>
+                    <th><%= f.label :ルーム名 %></th><br />
+                    <td><%= f.text_field :room_name %></td>
+            </div>
+            <div class="field">　
+                <tr>
+                    <th><%= f.label :ルーム紹介 %></th><br />
+                    <td><%= f.text_area :room_PR%></td>
+            </div>
+            <div class="field">　
+                <tr>
+                    <th><%= f.label :料金 %></th><br />
+                    <td><%= f.text_field :room_price %></td>
+            </div>
+            <div class="field">　
+                <tr>
+                    <th><%= f.label :住所 %></th><br />
+                    <td><%= f.text_field :room_address %></td>
+            </div>
+                <%= f.submit  "登録" %>
         </div>
-        <div class="field">　
-            <tr>
-                <th><%= f.label :ルーム名 %></th><br />
-                <td><%= f.text_field :room_name %></td>
-        </div>
-        <div class="field">　
-            <tr>
-                <th><%= f.label :ルーム紹介 %></th><br />
-                <td><%= f.text_area :room_PR%></td>
-        </div>
-        <div class="field">　
-            <tr>
-                <th><%= f.label :料金 %></th><br />
-                <td><%= f.text_field :room_price %></td>
-        </div>
-        <div class="field">　
-            <tr>
-                <th><%= f.label :住所 %></th><br />
-                <td><%= f.text_field :room_address %></td>
-        </div>
-             <%= f.submit  "登録" %>
     </div>
 <% end %>

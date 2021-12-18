@@ -26,8 +26,7 @@
 
                 <div class="searchbox">
                   <%= search_form_for @q, url: search_rooms_path do |f| %>  
-                      <%= f.label :room_name_cont, 'ルーム名' %>
-                      <%= f.search_field :room_name_cont ,class: "searchFieldBox"%>
+                      <%= f.search_field :room_name_or_room_address_or_room_PR_cont ,placeholder: "キーワード検索",class: "searchFieldBox"%>
                       <div class="icon"><!--キーワード検索アイコン-->
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" color="black"class="bi bi-search" viewBox="0 0 16 16">
                       <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
@@ -37,8 +36,7 @@
 
                 <div class="searchbox">
                   <%= search_form_for @q, url: search_rooms_path do |f| %>  
-                      <%= f.label :room_address_cont, 'エリア' %>
-                      <%= f.search_field :room_address_cont ,class: "searchFieldBox"%>
+                      <%= f.search_field :room_address_cont ,placeholder: "エリア検索",class: "searchFieldBox"%>
                       <div class="icon"><!--エリア検索アイコン-->
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" color="black" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
                         <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>     

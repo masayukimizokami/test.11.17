@@ -18,7 +18,8 @@ class ReserveController < ApplicationController
 		@room = Room.find(params[:room_id])
 		@reserve = Reserve.new(@attr)
 		@search = Search.new
-			
+		@user = current_user
+		@reserve.user_id = current_user.id	
 		session[:reserve] = @reserve
 		if @reserve.invalid?
 			#redirect_to :rooms/(room)
@@ -27,6 +28,7 @@ class ReserveController < ApplicationController
 	end
 
 	def complete
+		@room = Room.find(params[:room_id])
 		@room = Room.find(params[:room_id])
 		@reserve = Reserve.new(@attr)
 		@reserve.save
