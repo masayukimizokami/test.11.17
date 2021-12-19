@@ -1,2 +1,59 @@
-<h1>検索ページnew</h1>
+ <!--使ってない-->   
+<div class="background-photo">
+  <%= image_tag 'https://presite-potepancamp-rails-02.herokuapp.com/assets/img_cover_top.jpg' %>
+   
+   <div class="search-box">
+      <div class="search-text">
+        <h1>Potepan Shareでまだ体験したことのない旅をしよう</h1>
+      </div>
+      <%= form_for @search, html: {class:"pure-form"} do |s| %>
 
+        <div class="field">
+          <%= s.label :エリア %>
+          <%= s.text_field :keywords %>
+        </div>
+
+        <div class="actions"><%= s.submit "探す"%></div>
+      <% end %>
+    </div>
+</div>
+<div class="search-ereas">
+      <div class="tokyo">
+        <%= link_to root_path do %>
+        <div class="eraebox">
+          <%= image_tag 'https://presite-potepancamp-rails-02.herokuapp.com/assets/img_tokyo.jpg' %>
+        </div>
+        <p>東京</p>
+        <% end %>
+      </div>
+
+      <div class="osaka">
+        <%= link_to root_path do %>
+        <div class="eraebox">
+          <%= image_tag 'https://presite-potepancamp-rails-02.herokuapp.com/assets/img_osaka.jpg' %>
+        </div>
+        <p>東京</p>
+        <% end %>
+      </div>
+
+      <div class="fukuoka">
+        <%= link_to root_path do %>
+        <div class="eraebox">
+          <%= image_tag 'https://presite-potepancamp-rails-02.herokuapp.com/assets/img_fukuoka.jpg' %>
+        </div>
+        <p>東京</p>
+        <% end %>
+      </div>
+
+      <div class="sapporo">
+        <%= link_to root_path do %>
+        <div class="eraebox">
+          <%= image_tag 'https://presite-potepancamp-rails-02.herokuapp.com/assets/img_sapporo.jpg' %>
+        </div>
+        <p>東京</p>
+        <% end %>
+      </div>
+<div>
+
+    <p><%= link_to "戻る",rooms_path %></p>
+  </div>

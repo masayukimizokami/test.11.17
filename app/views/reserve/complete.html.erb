@@ -7,3 +7,22 @@
 </ol>
 
 <p>ご予約ありがとうございました。</p>
+
+<h1>予約内容確定</h1>
+<div>
+   <dt>¥<%= @room.room_price %>/日<dt>
+	<dl>
+		
+		<dt>開始日</dt>
+		<dd><%= @reserve.start_date.strftime('%Y年%m月%d日') %></dd>
+		<dt>終了日</dt>
+		<dd><%= @reserve.end_date.strftime('%Y年%m月%d日')  %></dd>
+		
+		<dt>使用日数：</dt>
+		<dd><%= @reserve.total_date %></dd>
+		<dt>人数：</dt>
+		<dd><%= @reserve.num_people %></dd>
+		<dt>合計金額</dt>
+		<dd><%= @reserve.calc_total_price(@room.room_price) %></dd>
+	</dl>
+</div>

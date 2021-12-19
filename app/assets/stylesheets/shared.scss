@@ -1,0 +1,51 @@
+.header-top-ul li{
+  display: inline;
+}
+
+.header_area{
+  display: flex;
+}
+.right_area{
+  margin-left: 400px;
+}
+.center_area{
+  width:  100px;
+}
+.background-photo{
+  background-image: url(https://presite-potepancamp-rails-02.herokuapp.com/assets/img_cover_top.jpg);
+  width: 100%;
+}
+
+.searchbox_area{
+display: flex;
+}
+.searchbox{
+  padding-top: 30px;
+  position: relative;
+  }
+
+.icon{
+  position: absolute;
+  left:140px ;
+}
+
+.user_name{
+  width: 100px;
+}
+.user_info{
+ display: flex;
+}
+
+.user_icon li{
+  color: rgb(255, 255, 255);
+  text-decoration:none ;
+ }
+ 
+ .header-link{
+   font-size: 20px;
+   color:white;
+   text-decoration: none;
+ }
+ .user-name-text{
+   font-size: 250px;
+ }

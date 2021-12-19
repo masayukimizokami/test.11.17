@@ -1,30 +1,42 @@
-<h1>予約フォーム</h1>
+<h1>予約内容確認</h1>
+<div>
+   
+		<dt>部屋名：</dt>
+		<dd><%= @room.room_name %></dd>
+		<dt>部屋金額：</dt>
+		<dd><%= @room.room_price %></dd>
+		<dt>開始日</dt>
+		<dd><%= @reserve.start_date.strftime('%Y年%m月%d日')  %></dd>
+		<dt>終了日</dt>
+		<dd><%= @reserve.end_date.strftime('%Y年%m月%d日')  %></dd>
+		
+		<dt>使用日数：</dt>
+		<dd><%= @reserve.total_date %></dd>
+		<dt>人数：</dt>
+		<dd><%= @reserve.num_people %></dd>
+		<dt>合計金額</dt>
+		<dd><%= @reserve.calc_total_price(@room.room_price) %></dd>
+	</dl>
+	<p>上記内容でよろしければ「予約を確定」を押してください</p>
 
-<ol class="nav">
-	<li>1.入力</li>
-	<li class="current">2.確認</li>
-	<li>3.完了</li>
-</ol>
+	<%= form_for @reserve, method: :post, url: reserve_complete_path(room_id:@room.id) do |form| %>
+		<%= form.hidden_field :reserve_date %>
+		<%= form.hidden_field :name %>
+		<%= form.hidden_field :note %>
+		<%= form.hidden_field :room_id, value: @room.id %>
+		<%= form.hidden_field :start_date %>
+		<%= form.hidden_field :end_date %>
+		<%= form.hidden_field :total_date %>
+		<%= form.hidden_field :num_people %>
+		<%= form.hidden_field :user_id, value: current_user.id %>
+		<%= form.hidden_field :total_price,value: @reserve.calc_total_price(@room.room_price) %>
 
-<dl>
-	<dt>希望日</dt>
-	<dd><%= @reserve.reserve_date %></dd>
-	<dt>名前</dt>
-	<dd><%= @reserve.name %></dd>
-	<dt>備考</dt>
-	<dd><%= @reserve.note %></dd>
-</dl>
+		<%= form.submit '予約を確定する' %>
+	<% end %>
 
-<%= form_for @reserve, method: :post, url: reserve_back_path do |form| %>
-	<%= form.hidden_field :reserve_date %>
-	<%= form.hidden_field :name %>
-	<%= form.hidden_field :note %>
-	<%= form.submit '入力画面に戻る' %>
-<% end %>
+	<%= form_for @reserve, method: :post, url: reserve_back_path do |form| %>
+		<%= form.submit 'ルーム詳細に戻る' %>
+	<% end %>
 
-<%= form_for @reserve, method: :post, url: reserve_complete_path do |form| %>
-	<%= form.hidden_field :reserve_date %>
-	<%= form.hidden_field :name %>
-	<%= form.hidden_field :note %>
-	<%= form.submit '送信する' %>
-<% end %>
+	
+</div>

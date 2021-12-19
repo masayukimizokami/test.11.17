@@ -1,9 +1,43 @@
-<h1>Rooms#show</h1>
-<p>Find me in app/views/rooms/show.html.erb</p>
+<div>
+  <div class="room-show">
+    <div class="content-wrap">
+      <div class="room-show-wrap">
+              <div class="room-show-image">
+                  <%= image_tag @room.image ,class:'show-image'%>
+              </div>
+              <div class="room-show-text">
+                      <p class="showText"><%= @room.room_name %></p>  
+                      <p class="showText"><%= @room.room_address %></p>
+                      <p class="showText"><%= @room.room_PR %></p>
+              </div>
+      </div>
 
-<%= @room.room_name %>
-
-
+      <div class="reservation-new-wrap">
+        
+              <div>
+                  <dt>¥<%= @room.room_price %>/日<dt>
+              </div>
+        
+        
+          <%= form_for @reserve, method: :post, url: reserve_confirm_path(room_id:@room.id) do |form| %>
+              <dl>
+                  
+                  <dt>開始日</dt>
+                  <dd><%= form.date_field :start_date %></dd>
+                  <dt>終了日</dt>
+                  <dd><%= form.date_field :end_date %></dd>
+                  <dt>人数</dt>
+                  <dd><%= form.number_field :num_people %></dd>
+              </dl>
+              <%= form.hidden_field :room_id,value: @room.id %>
+              
+              <%= form.submit '確認画面へ' %>
+          <% end %>
+        
+      </div>
+    </div>
+  </div>
+</div>
 
  
 

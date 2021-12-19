@@ -1,0 +1,29 @@
+header, footer {
+    width: 100%;
+    padding: 10px;
+    background: hsl(0, 0%, 0%);
+    color: #fff;
+    margin: 0px;
+    display: block;
+  }
+
+  footer{
+    text-align: center;
+    position: absolute;/*←絶対位置*/
+    bottom: 0; /*下に固定*/
+  }
+  
+
+  .rogo{
+    width: 200px;
+  }
+
+  .logbutton{
+    text-align: right;
+  }
+  .jsbutton{
+    text-align: right;
+  }
+
+  
+  

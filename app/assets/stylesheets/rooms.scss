@@ -1,3 +1,166 @@
 // Place all the styles related to the rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.room_image{
+    width: 500px;
+    height: auto;
+}
+
+.background-photo{
+    top:50px;
+    width: 100%;
+    background-size: cover;
+}
+
+.top_area{
+    position: relative;
+    bottom: 50px;
+    width: 100%;
+    background-size: cover;
+}
+.city_area{
+    position: relative;
+    display: flex;
+}
+
+.city img{
+   width: 250px;
+   height: 350px;
+   border-radius: 10px;
+   object-fit: cover;
+}
+
+.city{
+    position: relative;
+    margin: 30px;
+    padding: 10px;
+}
+
+.city h3{
+    position: absolute;
+    top: 260px;
+    left: 90px;
+    text-align: center;
+    color: azure;
+    font-weight: 900;
+    font-size: 40px;
+}
+
+.new_box{
+    margin-right: auto;
+    margin-left: auto;
+}
+.new_box tr{
+    text-align: center;
+}
+
+/*検索結果ページ*/
+.content{
+    max-width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.card-wrap{
+    display: flex;
+    /*justify-content: space-between;*/
+    flex-wrap: wrap;
+}
+
+.card-list{
+    max-width: 270px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+    border: solid 3px #000000;
+    text-decoration: none;
+    color:white;
+}
+.card-list:hover {
+	background-color:#babae9;
+}
+.card-list:nth-child(3n){  
+    margin-right: 0;
+}
+
+.card-list img{
+    width: 100%;
+}
+
+.card-listImage{
+    font-weight: bold;
+    margin: 30px 0;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1.6;
+}
+
+/*詳細ページ*/
+
+.room-show{
+    margin-top:50px;
+    max-width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.content-wrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.room-show-wrap{
+    width: 700px;
+    height: 700px;
+    text-align: center;
+}
+.room-show-image{
+    width: 700px;
+    height: 300px;
+    text-align: center;
+}
+.show-image{
+    width: 98%;
+    height: 300px;
+    text-align: center;
+    object-fit: cover;
+}
+
+
+
+.room-show-text{
+    margin-top: 50px;
+    width: 90%;
+    text-align: center;
+}
+
+.showText{
+    font-size: 20px;
+    font-family: serif;
+}
+
+/*新規ページ*/
+.new_box{
+    padding: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    background-color: #eef5eee1;
+  }
+  
+  
+  .new_box＿wrap{
+    max-width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: white;
+    padding: 30px;
+    margin: 0 100px;
+  }
+  
+  .field{
+   font-size: 20px;
+  }
+  
+  
+   

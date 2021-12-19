@@ -1,3 +1,86 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+  
+table td {
+  text-align: center;
+}
+
+table th, table td {
+  border: solid 1px black;
+  padding: 10px 20px;
+}
+
+/*登録済みルーム一覧*/
+.content{
+  max-width: 980px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.rooms-index-list{
+  display: flex;
+  /*justify-content: space-between;*/
+  flex-wrap: wrap;
+}
+
+
+.room-name-link{
+  font-size: 20px;
+  color: blue;/*変わらない*/
+  text-decoration: none;
+}
+
+.user-index-image{
+  width: 100px ;
+  height: 70px;
+}
+
+/*アカウント編集　user/edit */
+.content-edit{
+  max-width: 980px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.content-edit h1{
+  text-align: center;
+}
+
+.field-text{
+ font-size: 20px;
+}
+
+.field-box{
+  width: 300px;
+  border-radius: 5px;
+ }
+
+/*アカウント詳細*/
+
+.puser-show-main{
+  padding: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  background-color: #eef5eee1;
+}
+
+
+.user-show-wrap{
+  max-width: 700px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: white;
+  padding: 30px;
+  margin: 0 100px;
+}
+
+.field{
+ font-size: 20px;
+}
+
+
+ 

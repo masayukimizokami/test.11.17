@@ -1,9 +1,54 @@
-<h1>Rooms#index</h1>
-<p>Find me in app/views/rooms/index.html.erb</p>
+<div class="top_area">
+  <div class="background-photo">
+    
+    
+    <div class="search-box"><!--検索フォーム-->
+        <div class="search-text">
+          <h1>Potepan Shareでまだ体験したことのない旅をしよう</h1>
+        </div>
+
+          <%= search_form_for @q, url: search_rooms_path do |f| %>
+              
+              <%= f.search_field :room_name_or_room_address_or_room_PR_cont ,placeholder: "キーワード検索" %>
+              <br>
+              <%= f.submit '検索' %>
+          <% end %>
+
+      </div>
+  </div>
+</div>
+
+<div class="second_area">
+
+<h2>おすすめエリア</h2>
+
+  <div class="city_area">
+
+    <div class="city">
+        <a href="/rooms/search?q%5Broom_address_cont%5D=東京" ><img src='https://presite-potepancamp-rails-02.herokuapp.com/assets/img_tokyo.jpg'></a>
+        <p><%= link_to "", "/rooms/search?q%5Broom_address_cont%5D=東京" %></p>
+        <h3>東京</h3>
+    </div>
+
+    <div class="city">
+        <a href="/rooms/search?q%5Broom_address_cont%5D=大阪" ><img src='https://presite-potepancamp-rails-02.herokuapp.com/assets/img_osaka.jpg'></a>
+        <p><%= link_to "", "/rooms/search?q%5Broom_address_cont%5D=大阪" %></p>
+        <h3>大阪</h3>
+    </div>
+
+    <div class="city">
+        <a href="/rooms/search?q%5Broom_address_cont%5D=京都府" ><img src='https://presite-potepancamp-rails-02.herokuapp.com/assets/img_kyoto.jpg'></a>
+        <p><%= link_to "", "/rooms/search?q%5Broom_address_cont%5D=京都府" %></p>
+        <h3>京都</h3>
+    </div>
+
+    <div class="city">
+        <a href="/rooms/search?q%5Broom_address_cont%5D=札幌" ><img src='https://presite-potepancamp-rails-02.herokuapp.com/assets/img_sapporo.jpg'></a>
+        <p><%= link_to "", "/rooms/search?q%5Broom_address_cont%5D=札幌" %></p>
+        <h3>札幌</h3>
+    </div>
 
 
-
-<h1>部屋の一覧紹介</h1>
-
-
-
+  </div>
+</div>
+  
