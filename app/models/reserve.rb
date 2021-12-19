@@ -12,7 +12,7 @@ class Reserve < ApplicationRecord
 
       
      
-      def total_price(price = 0)
+      def calc_total_price(price = 0)
             price * num_people * total_date.to_i
       end
 

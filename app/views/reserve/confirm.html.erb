@@ -15,7 +15,7 @@
 		<dt>人数：</dt>
 		<dd><%= @reserve.num_people %></dd>
 		<dt>合計金額</dt>
-		<dd><%= @reserve.total_price(@room.room_price) %></dd>
+		<dd><%= @reserve.calc_total_price(@room.room_price) %></dd>
 	</dl>
 	<p>上記内容でよろしければ「予約を確定」を押してください</p>
 
@@ -29,7 +29,7 @@
 		<%= form.hidden_field :total_date %>
 		<%= form.hidden_field :num_people %>
 		<%= form.hidden_field :user_id, value: current_user.id %>
-		<%= form.hidden_field :total_price,value: @reserve.total_price(@room.room_price) %>
+		<%= form.hidden_field :total_price,value: @reserve.calc_total_price(@room.room_price) %>
 
 		<%= form.submit '予約を確定する' %>
 	<% end %>

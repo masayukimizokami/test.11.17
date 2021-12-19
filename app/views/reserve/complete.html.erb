@@ -23,6 +23,6 @@
 		<dt>人数：</dt>
 		<dd><%= @reserve.num_people %></dd>
 		<dt>合計金額</dt>
-		<dd><%= @reserve.total_price(@room.room_price) %></dd>
+		<dd><%= @reserve.calc_total_price(@room.room_price) %></dd>
 	</dl>
 </div>
